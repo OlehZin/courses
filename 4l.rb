@@ -179,5 +179,5 @@ grade = 0.0
 else
 p "Your grade is #{grade}%"
 ensure
-p "Grading complete"
+p "Grading complete!"
 end
