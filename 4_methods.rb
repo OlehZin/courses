@@ -69,9 +69,17 @@ def slice_hash(hash, keys_array)
     hash.select {|k, v| keys_array.include?(k) }
 end
 p slice_hash({a: 1, b: 2, c: 3, d: 4, e: 5}, [:a, :c])
-#12???
-
-puts '___________________________________'
+#12
+def minimum(arr)
+    min = arr[0]
+    arr.each do |i|
+        if i < min
+            min = i
+        end
+    end
+    return min
+end
+p minimum([5232, 323, -23234, 2325, 336])
 #13
 def default(options = {})
     a = options[:a] || 0
