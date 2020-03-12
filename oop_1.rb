@@ -189,7 +189,10 @@ class Point
     end
 end
 
-
+#1
+class Point
+    def 
+end
 
 
 
