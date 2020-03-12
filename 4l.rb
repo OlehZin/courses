@@ -112,7 +112,7 @@ f1 = 0
 f2 = 1
 array = []
 
-    while f1 <= 10
+while f1 <= 10
         array << f1
     f1, f2 = f2, f1 + f2
   end
@@ -133,7 +133,7 @@ min = max
     array.each do |i|
         if i < min
             min = i
-          end
+        end
     end
     puts min
 #6
