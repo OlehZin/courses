@@ -168,15 +168,63 @@ p RubyGreeter::Const
 #Додатково:
 
 #1
-class Point
-    class << self
-        def sum(*points)
-        x = y = 0
-        points.each {|p| x += p.x; y -= p.y }
-        p Point.new(x, y)
-        end
+class Point 
+    attr_reader :x, :y 
+  
+    def initialize(x, y) 
+      @x, @y = x, y 
     end
-end
+  
+    def to_s
+      "(#@x, #@y)" 
+    end
+  
+    def +(other) # Define + to do vector addition ($ p1 + p2)
+      Point.new(@x + other.x, @y + other.y) 
+    end 
+  
+    def -@ # Define unary minus to negate both coordinates($ -p1)
+      Point.new(-@x, -@y) 
+    end
+  
+    def *(scalar) # Define * to perform scalar multiplication 
+      Point.new(@x*scalar, @y*scalar) 
+    end
+  
+  
+    def Point.sum(*points) # Return the sum of an arbitrary number of points 
+      x = y = 0
+      points.each { |p| x += p.x; y += p.y }
+      Point.new(x, y)
+    end
+  
+  end
+  
+  
+  p1 = Point.new(1, 2)
+  p2 = Point.new(10, 20)
+  p3 = Point.new(100, 200)
+  
+  
+  puts 'p1 = (1, 2)'
+  puts 'p2 = (10, 20)'
+  puts 'p3 = (100, 200)'
+  puts ''
+  
+  puts 'p1 + p2'
+  p p1 + p2
+  puts ''
+  
+  puts '-p1'
+  p -p1
+  puts ''
+  
+  puts 'p1 * 10'
+  p p1 * 10
+  puts ''
+  
+  puts 'Point.sum(p1, p2, p3)'
+  p Point.sum(p1, p2, p3)
 #2
 class Point
     @@n = 0
@@ -189,10 +237,7 @@ class Point
     end
 end
 
-#1
-class Point
-    def 
-end
+
 
 
 
